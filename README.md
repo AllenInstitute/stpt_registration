@@ -58,7 +58,9 @@ Source: [lims2_modules/common/register/Registration/idpProjectionResampleVolumeR
 
 These methods were implemented as part of an informatics data processing pipeline and as such the 
 design is influenced by the need to communicate with the internal database, workflow and build management
-systems and to operate efficiently with internal file formats and compute clusters.
+systems and to operate efficiently with internal file formats and compute cluster. 
+
+We have not deloyed these methods beyond the scope of our own STPT images and computing cluster.
 
 We are not currently supporting this code, but simply releasing it to the community AS IS 
 but are not able to provide any guarantees of support. 
