@@ -94,8 +94,17 @@ Please see the documentation for each library for further details.
 * Run command [build/build_projection.sh](lims2_modules/common/register/build/build_projection.sh)
 
 
-# System Architecture
+# Example Runtimes
 
-These methods have been known to compile and function on system architecture with the following specifications:
+* Example global alignment job
 
+Limits:	mem=6gb,vmem=6gb,walltime=05:00:00,neednodes=centos
+Resources: cput=00:05:49,vmem=1265748kb,walltime=00:06:04,mem=1731724kb
+Node: x86_64, Linux, 3.10.0-514.26.2.el7.x86_64, 32 CPUs, 3000 MHz
+
+* Example local alignment job including image resampling
+
+Limits: mem=20gb,vmem=20gb,walltime=05:00:00,neednodes=centos
+Resources: cput=00:45:11,vmem=17240312kb,walltime=00:45:42,mem=14007624kb
+Node: x86_64, Linux, 3.10.0-514.26.2.el7.x86_64, 24 CPUs, 2500 MHz
 
