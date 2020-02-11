@@ -21,6 +21,8 @@ For each image, it contains the 2D transform to reconstruction the specimen. For
 the data is already inherently 3D. 
 For the image series, it contains the 3D transform that will align the STPT specimen to the target reference.
 
+Source: [lims2_modules/common/register/Registration/idpProjectionAlignmentModule.cxx](lims2_modules/common/register/Registration/idpProjectionAlignmentModule.cxx)
+
 
 ## idpProjectionLocalAlignmentModule
 Following the "global" registration step, this module performs a "local" deformable registration
@@ -42,11 +44,15 @@ resulting in a symmetric and invertible deformation field.
 Input to this module are two xml files, the first containing image-series metadata and the second contains the affine transforms 
 computed during the "global" registration step. The output of this module is the final B-spline grid and associated deformation field.
 
+Source: [lims2_modules/common/register/Registration/idpProjectionLocalAlignmentModule.cxx](lims2_modules/common/register/Registration/idpProjectionLocalAlignmentModule.cxx)
+
 
 ## idpProjectionResampleVolumeRGBModule
 Following the "local" deformable registration step, this module enable the warping
 of the STPT images to create an output volume that is aligned to the target reference. Input to this module
 are the image-series meta-data and transform xml files as well as the deformation field computed during "local" deformable registration.
+
+Source: [lims2_modules/common/register/Registration/idpProjectionResampleVolumeRGBModule.cxx](lims2_modules/common/register/Registration/idpProjectionResampleVolumeRGBModule.cxx)
 
 # Level of Support
 
@@ -79,9 +85,11 @@ Please see the documentation for each library for further details.
 # Build Instructions
 
 * Download each dependancy and build according to the instructions for each package
-* Update the build/configure.sh files with the location of each dependency
-* Change directory to lims2_modules/common/register/
-* Run command build/build_projection.sh
+* Update the following files with the location of each dependency
+  - [lims2_modules/lib/ITKJP2Lib/build/configure.sh](lims2_modules/lib/ITKJP2Lib/build/configure.sh)
+  - [lims2_modules/common/register/build/configure.sh](lims2_modules/common/register/build/configure.sh)
+* Change directory to [lims2_modules/common/register/](lims2_modules/common/register/)
+* Run command [build/build_projection.sh](lims2_modules/common/register/build/build_projection.sh)
 
 
 # System Architecture
