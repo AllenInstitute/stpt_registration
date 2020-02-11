@@ -1,0 +1,16 @@
+# This file sets up include directories and link directories.
+
+INCLUDE_DIRECTORIES(
+  ${ITKJP2Lib_SOURCE_DIR}
+  ${KAKADU_PATH}/coresys/common
+  ${KAKADU_PATH}/apps/compressed_io
+  ${KAKADU_PATH}/apps/support)
+
+IF (WIN32)
+  LINK_DIRECTORIES(${KAKADU_PATH}/../lib ${ITKJP2Lib_BINARY_DIR})
+  SET (ITK_JP2_LIBRARIES ITKJP2 kdu_v64R)
+ELSE (WIN32)
+  LINK_DIRECTORIES(${KAKADU_PATH}/lib ${ITKJP2Lib_BINARY_DIR})
+  SET (ITK_JP2_LIBRARIES ITKJP2 kdu)
+ENDIF (WIN32)
+
