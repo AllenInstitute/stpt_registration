@@ -66,7 +66,9 @@ A copy of the content of the "model_directory" used for registering STPT images 
 
 These methods were implemented as part of an informatics data processing pipeline and as such the 
 design is influenced by the need to communicate with the internal database, workflow and build management
-systems and to operate efficiently with internal file formats and compute cluster. 
+systems and to operate efficiently with internal file formats (eg JPEG2000) and compute cluster. A high level of technical
+expertise may be required to compile the code and all its dependent packages, 
+format image files into the require format and the generation and parsing of highly structured and verbose input/output xml files.
 
 We have not deployed these methods beyond the scope of our own STPT images and computing cluster.
 
