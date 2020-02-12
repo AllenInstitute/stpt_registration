@@ -54,13 +54,21 @@ are the image-series meta-data and transform xml files as well as the deformatio
 
 Source: [lims2_modules/common/register/Registration/idpProjectionResampleVolumeRGBModule.cxx](lims2_modules/common/register/Registration/idpProjectionResampleVolumeRGBModule.cxx)
 
+# The "model_directory"
+
+Reference data and algorithm parameters needed by the registration methods is organized in a directory structure.
+In the production pipeline, the modules access this directory at a standard default location. Each module has an optional "model_directory" input argument to configure the modules to look for that information in user specified location. 
+
+A copy of the content of the "model_directory" used for registering STPT images is located [here](http://download.alleninstitute.org/publications/allen_mouse_brain_common_coordinate_framework/).
+
+
 # Level of Support
 
 These methods were implemented as part of an informatics data processing pipeline and as such the 
 design is influenced by the need to communicate with the internal database, workflow and build management
 systems and to operate efficiently with internal file formats and compute cluster. 
 
-We have not deloyed these methods beyond the scope of our own STPT images and computing cluster.
+We have not deployed these methods beyond the scope of our own STPT images and computing cluster.
 
 We are not currently supporting this code, but simply releasing it to the community AS IS 
 but are not able to provide any guarantees of support. 
@@ -86,7 +94,7 @@ Please see the documentation for each library for further details.
 
 # Build Instructions
 
-* Download each dependancy and build according to the instructions for each package
+* Download each dependency and build according to the instructions for each package
 * Update the following files with the location of each dependency
   - [lims2_modules/lib/ITKJP2Lib/build/configure.sh](lims2_modules/lib/ITKJP2Lib/build/configure.sh)
   - [lims2_modules/common/register/build/configure.sh](lims2_modules/common/register/build/configure.sh)
