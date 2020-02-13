@@ -4,7 +4,7 @@ This repository contains code for methods to register serial two-photon tomograp
 from the Allen Mouse Connectivity Atlas as described in 
 [Oh et. al., 2014](https://www.ncbi.nlm.nih.gov/pubmed/24695228/) and
 [Kuan et. al., 2015](https://www.ncbi.nlm.nih.gov/pubmed/25536338/).
-These methods have also been used in the construction of average template of the 
+These methods were also used in the construction of the average template of the 
 [Allen Mouse Common Coordinate Framework](https://community.brain-map.org/t/allen-mouse-ccf-accessing-and-using-related-data-and-tools/359).
 
 # STPT Registration Methods
@@ -17,7 +17,7 @@ The module first performs a rigid registration followed by an affine (12 paramet
 mutual information as the similarity metric and employing a multi-resolution optimization strategy. Input to this module is an xml file
 containing meta-data for the image-series including the location, size and resolution of each image file. 
 The output of this module is a "transform" xml.
-For each image, it contains the 2D transform to reconstruction the specimen. For STPT, this is simply the identity transform since
+For each image, it contains the 2D transform to reconstruct the specimen. For STPT, this is simply the identity transform since
 the data is already inherently 3D. 
 For the image series, it contains the 3D transform that will align the STPT specimen to the target reference.
 
@@ -48,7 +48,7 @@ Source: [lims2_modules/common/register/Registration/idpProjectionLocalAlignmentM
 
 
 ## idpProjectionResampleVolumeRGBModule
-Following the "local" deformable registration step, this module enable the warping
+Following the "local" deformable registration step, this module enables the warping
 of the STPT images to create an output volume that is aligned to the target reference. Input to this module
 are the image-series meta-data and transform xml files as well as the deformation field computed during "local" deformable registration.
 
@@ -56,7 +56,7 @@ Source: [lims2_modules/common/register/Registration/idpProjectionResampleVolumeR
 
 # The "model_directory"
 
-Reference data and algorithm parameters needed by the registration methods is organized in a directory structure.
+Reference data and algorithm parameters needed by the registration methods are organized in a directory structure.
 In the production pipeline, the modules access this directory at a standard default location. Each module has an optional "model_directory" input argument to configure the modules to look for that information in user specified location. 
 
 A copy of the content of the "model_directory" used for registering STPT images is located [here](http://download.alleninstitute.org/publications/allen_mouse_brain_common_coordinate_framework/).
@@ -68,13 +68,11 @@ These methods were implemented as part of an informatics data processing pipelin
 design is influenced by the need to communicate with the internal database, workflow and build management
 systems and to operate efficiently with internal file formats (eg JPEG2000) and compute cluster. A high level of technical
 expertise may be required to compile the code and all its dependent packages, 
-format image files into the require format and the generation and parsing of highly structured and verbose input/output xml files.
+format image files into the required format and the generation and parsing of highly structured and verbose input/output xml files.
 
 We have not deployed these methods beyond the scope of our own STPT images and computing cluster.
 
-We are not currently supporting this code, but simply releasing it to the community AS IS 
-but are not able to provide any guarantees of support. 
-The community is welcome to submit issues, but you should not expect an active response.
+We are not currently supporting this code, but simply releasing it to the community AS IS. We are not able to provide any guarantees of support. The community is welcome to submit issues, but you should not expect an active response.
 
 # Dependencies
 
